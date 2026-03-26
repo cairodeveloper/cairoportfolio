@@ -30,6 +30,11 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+// Landing Pages Examples
+import gymbr from "./examples/landingpages/gymbr.png";
+import foodlover from "./examples/landingpages/foodlover.png";
+import dentale from "./examples/landingpages/dentale.png";
+
 export {
   logo,
   backend,
@@ -59,4 +64,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  gymbr,
+  foodlover,
+  dentale,
 };

@@ -27,35 +27,47 @@ import {
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
+    id: "landing-page",
+    title: "Landing Page",
+    path: "/landing-page",
+    isPage: true
   },
   {
-    id: "work",
-    title: "Work",
+    id: "institutional",
+    title: "Site Institucional",
+    path: "/site-institucional",
+    isPage: true
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: "sobre",
+    title: "Sobre",
+    path: "/sobre",
+    isPage: true
+  },
+  {
+    id: "contato",
+    title: "Contato",
+    path: "/contato",
+    isPage: true
+  },
+  {
+    id: "termos",
+    title: "Termos",
+    path: "/termos",
+    isPage: true
   },
 ];
 
 const services = [
   {
-    title: "Web Developer",
-    icon: web,
+    title: "Landing Page",
+    icon: "landing-page.png",
+    path: "/landing-page",
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
+    title: "Site Institucional",
+    icon: "institutional-site.png",
+    path: "/site-institucional",
   },
 ];
 
@@ -169,30 +181,24 @@ const experiences = [
   },
 ];
 
-const testimonials = [
+const avaliacoes = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "Achei que seria impossível ter um site tão bonito quanto nosso produto, mas o Cairo provou que é possível.",
+    name: "Cláudio Silva",
+    image: "src/assets/claudio.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
+      "Nunca conheci um desenvolvedor web que realmente se importa com o sucesso dos clientes como o Cairo.Dev.",
+    name: "Júlio Costa",
+    image: "https://randomuser.me/api/portraits/men/86.jpg",
+  },
+  {
+    testimonial:
+      "Depois que o Cairo otimizou nosso site, nosso tráfego aumentou 50%. Não temos palavras para agradecer!",
+    name: "André Pereira",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 
@@ -262,4 +268,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, avaliacoes as testimonials, projects };

@@ -10,6 +10,20 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const handleNavigation = (nav) => {
+    setActive(nav.title);
+    if (!nav.isPage) {
+      // Se estiver na home, apenas scrolla
+      if (window.location.pathname === '/') {
+        const element = document.getElementById(nav.id);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Se estiver em outra página, volta para home com o hash
+        window.location.href = `/${nav.path}`;
+      }
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -27,13 +41,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
+      className={`w-full flex items-center py-5 px-4 fixed top-0 z-20 ${
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
-      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
+      <div className='w-full flex justify-between items-center'>
         <Link
           to='/'
           className='flex items-center gap-2'
@@ -42,23 +54,31 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Adrian &nbsp;
-            <span className='sm:block hidden'> | JavaScript Mastery</span>
+            Cairo.Dev
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden sm:flex flex-row gap-6'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
+              className={`$
                 active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
+              } hover:text-white text-[15px] font-medium cursor-pointer transition-all`}
+              onClick={() => {
+                setActive(nav.title);
+                if (!nav.isPage) {
+                  // Se for About ou Contact, primeiro vai para home e depois scrolla
+                  window.location.href = `/${nav.path}`;
+                }
+              }}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              {nav.isPage ? (
+                <Link to={nav.path}>{nav.title}</Link>
+              ) : (
+                <span>{nav.title}</span>
+              )}
             </li>
           ))}
         </ul>
@@ -74,13 +94,13 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-4 black-gradient absolute top-20 right-0 min-w-[140px] z-10 rounded-xl`}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-2'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  className={`font-poppins font-medium cursor-pointer text-[14px] ${
                     active === nav.title ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {
