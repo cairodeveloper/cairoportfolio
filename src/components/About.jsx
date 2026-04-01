@@ -1,6 +1,7 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { services } from "../constants";
@@ -22,7 +23,7 @@ const ServiceCard = ({ index, title, icon, path }) => (
         className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'>
           
         <img
-          src={`src/assets/${icon}`}
+          src={icon}
           alt={title}
           className='w-16 h-16 object-contain'
           style={{ filter: 'brightness(0) invert(1)' }}
@@ -31,12 +32,12 @@ const ServiceCard = ({ index, title, icon, path }) => (
         <h3 className='text-white text-[20px] font-bold text-center'>
           {title}
         </h3>
-        <a
-          href={path || "#"}
+        <Link
+          to={path || "/"}
           className="mt-4 bg-[#3a2176] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#915EFF] transition-colors"
         >
           Saiba mais
-        </a>
+        </Link>
       </div>
     </motion.div>
   </Tilt>

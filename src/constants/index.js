@@ -23,6 +23,9 @@ import {
   jobit,
   tripguide,
   threejs,
+  landingPage,
+  institutionalSite,
+  claudio,
 } from "../assets";
 
 export const navLinks = [
@@ -61,12 +64,12 @@ export const navLinks = [
 const services = [
   {
     title: "Landing Page",
-    icon: "landing-page.png",
+    icon: landingPage,
     path: "/landing-page",
   },
   {
     title: "Site Institucional",
-    icon: "institutional-site.png",
+    icon: institutionalSite,
     path: "/site-institucional",
   },
 ];
@@ -186,7 +189,7 @@ const avaliacoes = [
     testimonial:
       "Achei que seria impossível ter um site tão bonito quanto nosso produto, mas o Cairo provou que é possível.",
     name: "Cláudio Silva",
-    image: "src/assets/claudio.jpg",
+    image: claudio,
   },
   {
     testimonial:

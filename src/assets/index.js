@@ -29,6 +29,9 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import landingPage from "./landing-page.png";
+import institutionalSite from "./institutional-site.png";
+import claudio from "./claudio.jpg";
 
 // Landing Pages Examples
 import gymbr from "./examples/landingpages/gymbr.png";
@@ -64,6 +67,9 @@ export {
   carrent,
   jobit,
   tripguide,
+  landingPage,
+  institutionalSite,
+  claudio,
   gymbr,
   foodlover,
   dentale,
